@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
 
         val userClick=findViewById<Button>(R.id.checkbutton)
         val userGuess=findViewById<TextInputLayout>(R.id.userGuessNumber)
-        var view=findViewById<TextView>(R.id.Result)
+        val view=findViewById<TextView>(R.id.Result)
         val num= Random.nextInt(0,1000)
 
         userClick.setOnClickListener{
@@ -25,13 +25,13 @@ class MainActivity : AppCompatActivity() {
                 val check = if (enteredNumber.isNullOrEmpty()) 0
                 else enteredNumber.toInt()
                 if(check==num){
-                    view.text="You are right"
+                    view.setText("You are right")
                 }
                 else if(check<num){
-                    view.text="No, the number is bigger"
+                    view.setText("No, the number is bigger")
                 }
                 else
-                    view.text="No, the number is smaller"
+                    view.setText("No, the number is smaller")
 
             }
             catch (e:Exception){
